@@ -7,8 +7,26 @@
   <title>A web Page</title>
 </head>
 <body>
-  <div>
-    <h1>Here are some delicious foods!</h1>
-  </div>
+  @{
+    var FoodList = new List<string>
+      {
+        "Apple Pie",
+        "Burritos",
+        "Clams (steamed)",
+        "Donatsu"
+      };
+  <h1>Here are some delicious foods!</h1>
+    foreach(var food in FoodList)
+    {
+      @if(food[0] == 'c' || food[0] == 'C')
+      {
+        <p style="color:red">@food</p>
+      }
+      else
+      {
+        <p>@food</p>
+      }
+    }
+  }
 </body>
 </html>
